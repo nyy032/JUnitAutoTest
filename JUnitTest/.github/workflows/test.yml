@@ -2,7 +2,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main" ]  # あなたのブランチ名が「master」ならここをmasterに変えてください
+    branches: [ "master" ] 
 
 jobs:
   build:
