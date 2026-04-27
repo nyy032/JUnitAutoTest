@@ -2,7 +2,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -19,6 +19,5 @@ jobs:
         cache: maven
 
     - name: Run Tests with Maven
-      # ↓ ここを追加（あなたのフォルダ名に合わせて修正してください）
-      working-directory: JUnitTest
+      # working-directory の行を消して、直接 run を書きます
       run: mvn test
