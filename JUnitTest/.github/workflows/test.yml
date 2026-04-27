@@ -1,7 +1,7 @@
 name: Java CI with Maven
 on:
   push:
-    branches: [ master ] # もし自分のブランチがmasterならmasterに変えてください
+    branches: [ master ] # もし自分のブランチがmasterならmasterに変えてください　
 jobs:
   build:
     runs-on: ubuntu-latest
