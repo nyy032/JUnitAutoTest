@@ -18,6 +18,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Run Tests with Maven
-      # working-directory の行を消して、直接 run を書きます
+    - name: Run Tests
+      # 「--file pom.xml」をあえて書かず、ディレクトリも指定しない一番シンプルな形
       run: mvn test
