@@ -26,7 +26,7 @@ class SushiServiceApplicationTests {
     void testSushiFullProcess() {
         // 1. お気に入りの8個のデータを準備
         List<Sushi> fakeDb = Arrays.asList(
-            new Sushi("マグロ", 100), new Sushi("サーモン", 120), new Sushi("エビ", 100),
+            new Sushi("マグロ", 10), new Sushi("サーモン", 120), new Sushi("エビ", 100),
             new Sushi("イカ", 80), new Sushi("タコ", 80), new Sushi("いくら", 250),
             new Sushi("うに", 300), new Sushi("アナゴ", 150)
         );
@@ -45,7 +45,7 @@ class SushiServiceApplicationTests {
         // 5. 【全自動検証】8個すべての金額が正しいかJUnitが判定
         assertAll("全8件の税込価格・件数チェック",
             () -> assertEquals(8, results.size(), "データ件数が一致しません"),
-            () -> assertEquals(110, results.get(0).getTaxPrice(), "マグロの価格ミス"),
+            () -> assertEquals(11, results.get(0).getTaxPrice(), "マグロの価格ミス"),
             () -> assertEquals(132, results.get(1).getTaxPrice(), "サーモンの価格ミス"),
             () -> assertEquals(110, results.get(2).getTaxPrice(), "エビの価格ミス"),
             () -> assertEquals(88,  results.get(3).getTaxPrice(), "イカの価格ミス"),
