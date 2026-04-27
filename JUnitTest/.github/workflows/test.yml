@@ -14,4 +14,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run Tests
-      run: mvn test # 余計なオプションを付けないああ
+	run: |
+	  POM_PATH=$(find . -name "pom.xml" | head -n 1)
+	  POM_DIR=$(dirname "$POM_PATH")
+	  cd "$POM_DIR"
+	  mvn test
