@@ -19,5 +19,5 @@ jobs:
         cache: maven
 
     - name: Run Tests
-      # 「--file pom.xml」をあえて書かず、ディレクトリも指定しない一番シンプルな形
+      # 「--file pom.xml」をあえて書かず、ディレクトリも指定しない一番シンプルな形あ
       run: mvn test
