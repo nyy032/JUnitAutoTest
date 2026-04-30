@@ -1,21 +1,24 @@
 name: Java CI with Maven
+
 on:
   push:
-    branches: [ master ] # もし自分のブランチがmasterならmasterに変えてください　
+    branches: [ "master" ] # 画像に「リポジトリー master」とあるのでmasterにします
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Run Tests
-	run: |
-	  POM_PATH=$(find . -name "pom.xml" | head -n 1)
-	  POM_DIR=$(dirname "$POM_PATH")
-	  cd "$POM_DIR"
-	  mvn test
+
+    - name: Run Tests with Maven
+      # ↓ ここが重要！フォルダ名を指定して実行場所を移動させます
+      working-directory: ./JUnitTest
+      run: mvn test
